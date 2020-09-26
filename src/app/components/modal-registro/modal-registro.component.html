@@ -1,0 +1,113 @@
+<div>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Registrate</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="card border-0 rounded-0 h-100">
+            <div class="card-body">
+                <h6>(*) Obligatorio</h6>
+                <form ngNativeValidate (ngSubmit)="registrarUsuario()" id="formRegistro">
+                    <div class="form-row">
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label>Primer Nombre (*)</label>
+                            <input type="text" [(ngModel)]="registro.primerNombre" name="primerNombre"
+                                class="form-control rounded-0" required placeholder="Primer nombre">
+                        </div>
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label>Segundo Nombre</label>
+                            <input type="text" [(ngModel)]="registro.segundoNombre" name="segundoNombre"
+                                class="form-control rounded-0" placeholder="Segundo nombre">
+                        </div>
+
+
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group  col-md-6 col-sm-12">
+                            <label>Primer Apellido (*)</label>
+                            <input type="text" [(ngModel)]="registro.primerApellido" name="primerApellido"
+                                class="form-control rounded-0" required placeholder="Primer Apellido">
+                        </div>
+                        <div class="form-group  col-md-6 col-sm-12">
+                            <label>Segundo Apellido</label>
+                            <input type="text" [(ngModel)]="registro.segundoApellido" name="segundoApellido"
+                                class="form-control rounded-0" placeholder="Segundo Apellido">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label>Tipo identificación (*)</label>
+                            <select required class="form-control" [(ngModel)]="registro.tipoIdentificacion"
+                                name="tipoIdentificacion">
+                                <option value="Cedula Ciudadania">Cédula Ciudadanía</option>
+                                <option value="Tarjeta Identidad">Tarjeta de identidad</option>
+                                <option value="Cedula Extranjeri">Cédula de extranjería/option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label>Identificación (*)</label>
+                            <input type="number" [(ngModel)]="registro.identificacion" name="identificacion" required
+                                class="form-control rounded-0" required placeholder="Identificación">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label>Dirección</label>
+                            <input type="text" [(ngModel)]="registro.direccion" name="direccion"
+                                class="form-control rounded-0" placeholder="Dirección">
+                        </div>
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label>Telefono</label>
+                            <input type="text" [(ngModel)]="registro.telefono" name="telefono"
+                                class="form-control rounded-0" placeholder="Telefono">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group  col-lg-4 col-md-4 col-sm-12">
+                            <label>Fecha Nacimiento (*) </label>
+                            <input type="date" name="fechaNacimiento"
+                                [ngModel]="registro.fechaNacimiento | date:'yyyy-MM-dd'"
+                                (ngModelChange)="registro.fechaNacimiento = $event" class="form-control rounded-0"
+                                placeholder="Fecha nacimiento" required>
+                        </div>
+                        <div class="form-group  col-lg-4 col-md-4 col-sm-12">
+                            <label>Genero (*)</label>
+                            <select required class="form-control" [(ngModel)]="registro.genero" name="genero">
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino</option>
+                            </select>
+                        </div>
+                        <div class="form-group  col-lg-4 col-md-4 col-sm-12">
+                            <label>Estado civil </label>
+                            <select class="form-control" [(ngModel)]="registro.estadoCivil" name="estadoCivil">
+                                <option value="Soltero">Soltero(a)</option>
+                                <option value="Casado">Casado(a)</option>
+                                <option value="Viudo">Viudo(a)</option>
+                                <option value="Union Libre">Union libre</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <label>Correo</label>
+                            <input type="email" class="form-control" [(ngModel)]="registro.email" name="email">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <label>Contraseña</label>
+                            <input type="password" required [(ngModel)]="registro.password" name="password"
+                                class="form-control">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" (click)="modalRef.hide()" class="btn btn-secondary mr-1">Cerrar</button>
+    <button type="submit" form="formRegistro" class="btn btn-primary">Registrarse</button>
+</div>

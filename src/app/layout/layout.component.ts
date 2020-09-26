@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { ModalRegistroComponent } from '../components/modal-registro/modal-registro.component';
+
 
 @Component({
   selector: 'app-layout',

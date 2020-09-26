@@ -1,0 +1,30 @@
+<div>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Iniciar Sesión</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="card border-0 rounded-0 h-100">
+            <div class="card-body">
+                <form ngNativeValidate (ngSubmit)="iniciarSesion()" id="formLogin">
+                    <div class="form-group">
+                        <label>Identificación</label>
+                        <input type="number" [(ngModel)]="username" name="username" class="form-control rounded-0"
+                            required placeholder="Identificación">
+                    </div>
+                    <div class="form-group">
+                        <label>Contraseña</label>
+                        <input type="password" [(ngModel)]="password" name="Password" class="form-control rounded-0"
+                            placeholder="Contraseña" required>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <!-- <button type="button" (click)="modalRef.hide()" class="btn btn-primary mr-1">Iniciar Sesión</button> -->
+        <button type="submit" form="formLogin" class="btn btn-primary">Iniciar Sesión</button>
+    </div>
+</div>

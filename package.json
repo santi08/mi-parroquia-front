@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~8.2.5",
+    "@angular/animations": "^8.2.14",
     "@angular/common": "~8.2.5",
     "@angular/compiler": "~8.2.5",
     "@angular/core": "~8.2.5",
@@ -21,9 +21,12 @@
     "@angular/pwa": "^0.1001.2",
     "@angular/router": "~8.2.5",
     "@angular/service-worker": "~8.2.5",
+    "@auth0/angular-jwt": "^5.0.1",
     "@popperjs/core": "^2.4.4",
     "bootstrap": "^4.5.2",
     "jquery": "^3.5.1",
+    "ngx-bootstrap": "^6.1.0",
+    "ngx-toastr": "^11.3.3",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
