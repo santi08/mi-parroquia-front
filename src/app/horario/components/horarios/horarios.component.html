@@ -8,25 +8,18 @@
                 <th scope="col">Dia de la semana</th>
                 <th scope="col">Cupo total</th>
                 <th scope="col">Cupo disponible</th>
+                <th scope="col">Transmisión</th>
+                <th scope="col">Editar</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
+            <tr *ngFor="let horario of horarios">
+                <td>{{horario.hora}}</td>
+                <td>{{horario.dia}}</td>
+                <td>{{horario.capacidad}}</td>
+                <td>{{horario.disponible}}</td>
+                <td>{{horario.transmision}}</td>
+                <td></td>
             </tr>
         </tbody>
     </table>
@@ -34,6 +27,6 @@
 
 <!-- <div>
     <div class="row">
-        
+
     </div>
 </div> -->
